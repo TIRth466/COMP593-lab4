@@ -52,7 +52,7 @@ def generate_source_ip_log(log_file, ip_address):
     captured_data  = filter_log_by_regex(log_file, regex)[0]
     report_df = pd.DataFrame(captured_data)
     ip_underscore = re.sub('\.', '_', ip_address)
-    report_df.to_csv(f"source_ip_{ip_underscore}.log", index=False)
+    report_df.to_csv(f"source_ip_{ip_underscore}.log", index=False,header=None)
     
     return 
 
